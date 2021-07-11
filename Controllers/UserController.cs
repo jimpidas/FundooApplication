@@ -1,5 +1,5 @@
-﻿using BusinessLayer.Interfaces;
-using CommonLayer.DatabaseModel;
+﻿using CommonLayer.DatabaseModel;
+using CommonLayer.RequestModel;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Interfaces;
 using System;
@@ -13,52 +13,19 @@ namespace FundooApplication.Controllers
     [ApiController]
     public class UserController : Controller
     {
-        /*IUserBL iuserBL;
-        public UserController(IUserBL userBL)
-        {
-            this.iuserBL = userBL;
-        }
-        [HttpPost]
-       
-        public IActionResult RegisterUser(UserModel user)
-        {
-            try
-            {
-                this.iuserBL.RegisterUser(user);
-                return this.Ok(new { success = true, message = $"Registration Successful {user.FirstName}" });
-            }
-            catch (Exception e)
-            {
-                return this.BadRequest(new { success = false, message = $"Registration Fail {e.Message}+{e.InnerException}" });
-            }
-        }
-        [HttpGet]
-        public IActionResult GetUser()
-        {
-            try
-            {
-                List<UserModel> userList=this.iuserBL.ReturnUserList();
-                return this.Ok(new { success = true, message = $"The user list is ", data = userList }); 
-            }
-            catch (Exception e)
-            {
-                return this.BadRequest(new { success = false, message = $"Registration Fail {e.Message}+{e.InnerException}" });
-            }
-        }*/
-
         private readonly IDataRepository<UserModel> _dataRepository;
         public UserController(IDataRepository<UserModel> dataRepository)
         {
             _dataRepository = dataRepository;
         }
-        // GET: api/Employee
+       
         [HttpGet]
         public IActionResult Get()
         {
             IEnumerable<UserModel> users = _dataRepository.GetAll();
             return Ok(users);
         }
-        // GET: api/Employee/5
+       
         [HttpGet("{id}", Name = "Get")]
         public IActionResult Get(int id)
         {
@@ -69,19 +36,47 @@ namespace FundooApplication.Controllers
             }
             return Ok(user);
         }
-        // POST: api/Employee
-        [HttpPost]
+        
+        [HttpPost("register")]
         public IActionResult Post([FromBody] UserModel user)
         {
             if (user == null)
             {
                 return BadRequest("user is null.");
             }
-            _dataRepository.Add(user);
-            return CreatedAtRoute(
-                  "Get",
-                  new { Id = user.UserModelID },
-                  user);
+             _dataRepository.Add(user);
+             return CreatedAtRoute(
+                "Get",
+               new { Id = user.UserModelID },
+             user);
         }
+        [HttpPost("Login")]
+        public IActionResult AuthenticateUser(LoginRequestModel loginUser)
+        {
+            if (loginUser == null)
+            {
+                return BadRequest("user is null.");
+            }
+            try
+            {
+                UserModel user = _dataRepository.AthenticateUser(loginUser);
+                if (user != null)
+                {
+                   // var tokenString = userAuthentication.GenerateSessionJWT(user);
+                    return Ok(new
+                    {
+                        success = true,
+                        Message = "User Login Successful",
+                        user 
+                    });
+                }
+                return BadRequest(new { success = false, Message = "User Login Unsuccessful" });
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(new { success = false, exception.Message });
+            }
+        }
+
     }
 }

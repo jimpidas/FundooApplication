@@ -27,11 +27,7 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {
-              "C:\\Users\\Dell\\DotNetProjects\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\Dell\\DotNetProjects\\Repository\\Repository.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -43,26 +39,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.7, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.7, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.7, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[5.5.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -182,6 +158,9 @@
             "projectReferences": {
               "C:\\Users\\Dell\\DotNetProjects\\BusinessLayer\\BusinessLayer.csproj": {
                 "projectPath": "C:\\Users\\Dell\\DotNetProjects\\BusinessLayer\\BusinessLayer.csproj"
+              },
+              "C:\\Users\\Dell\\DotNetProjects\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Dell\\DotNetProjects\\Repository\\Repository.csproj"
               }
             }
           }

@@ -1598,12 +1598,6 @@
       "BusinessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.7",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
-          "Repository": "1.0.0",
-          "Swashbuckle.AspNetCore": "5.5.0"
-        },
         "compile": {
           "bin/placeholder/BusinessLayer.dll": {}
         },
@@ -6039,6 +6033,7 @@
       "Microsoft.EntityFrameworkCore >= 5.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.7",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.7",
+      "Repository >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.5.0"
     ]
   },
@@ -6071,6 +6066,9 @@
           "projectReferences": {
             "C:\\Users\\Dell\\DotNetProjects\\BusinessLayer\\BusinessLayer.csproj": {
               "projectPath": "C:\\Users\\Dell\\DotNetProjects\\BusinessLayer\\BusinessLayer.csproj"
+            },
+            "C:\\Users\\Dell\\DotNetProjects\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\Dell\\DotNetProjects\\Repository\\Repository.csproj"
             }
           }
         }

@@ -1,5 +1,3 @@
-using BusinessLayer.Interfaces;
-using BusinessLayer.Services;
 using CommonLayer.DatabaseModel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,8 +34,6 @@ namespace FundooApplication
             services.AddScoped<IDataRepository<UserModel>, UserManager>();
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddSingleton<IUserBL, UserBL>();
-            services.AddSingleton<IUserRL, UserRL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
