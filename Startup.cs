@@ -1,5 +1,3 @@
-using BusinessLayer.Interfaces;
-using BusinessLayer.Services;
 using CommonLayer.DatabaseModel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,6 +15,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.SqlServer;
+using BusinessLayer1.Interfaces;
+using BusinessLayer1.Service;
 
 namespace FundooApplication
 {
@@ -33,11 +33,10 @@ namespace FundooApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<UsersContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("UserDB")));
-            services.AddScoped<IDataRepository<UserModel>, UserManager>();
+            services.AddScoped<IUserRL<UserModel>, UserRL>();
+            services.AddScoped<IUserBL<UserModel>, UserBL>();
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddSingleton<IUserBL, UserBL>();
-            services.AddSingleton<IUserRL, UserRL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

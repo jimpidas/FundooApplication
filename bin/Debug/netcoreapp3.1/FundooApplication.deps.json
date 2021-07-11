@@ -35,6 +35,7 @@
           "Microsoft.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.7",
+          "Repository": "1.0.0",
           "Swashbuckle.AspNetCore": "5.5.0",
           "CommonLayer.Reference": "1.0.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -1460,10 +1461,8 @@
       },
       "BusinessLayer/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.7",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
-          "Repository": "1.0.0",
-          "Swashbuckle.AspNetCore": "5.5.0"
+          "CommonLayer": "1.0.0",
+          "Repository": "1.0.0"
         },
         "runtime": {
           "BusinessLayer.dll": {}

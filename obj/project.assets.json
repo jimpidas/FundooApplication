@@ -1598,11 +1598,46 @@
       "BusinessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CommonLayer": "1.0.0",
+          "Repository": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/BusinessLayer.dll": {}
         },
         "runtime": {
           "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
+      "CommonLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.7",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
+          "Swashbuckle.AspNetCore": "5.5.0"
+        },
+        "compile": {
+          "bin/placeholder/CommonLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonLayer.dll": {}
+        }
+      },
+      "Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CommonLayer": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.7",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
+          "Swashbuckle.AspNetCore": "5.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.dll": {}
         }
       }
     }
@@ -5984,6 +6019,16 @@
       "type": "project",
       "path": "../BusinessLayer/BusinessLayer.csproj",
       "msbuildProject": "../BusinessLayer/BusinessLayer.csproj"
+    },
+    "CommonLayer/1.0.0": {
+      "type": "project",
+      "path": "../CommonLayer/CommonLayer.csproj",
+      "msbuildProject": "../CommonLayer/CommonLayer.csproj"
+    },
+    "Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5992,6 +6037,7 @@
       "Microsoft.EntityFrameworkCore >= 5.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.7",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.7",
+      "Repository >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.5.0"
     ]
   },
@@ -6024,6 +6070,9 @@
           "projectReferences": {
             "C:\\Users\\Dell\\DotNetProjects\\BusinessLayer\\BusinessLayer.csproj": {
               "projectPath": "C:\\Users\\Dell\\DotNetProjects\\BusinessLayer\\BusinessLayer.csproj"
+            },
+            "C:\\Users\\Dell\\DotNetProjects\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\Dell\\DotNetProjects\\Repository\\Repository.csproj"
             }
           }
         }
