@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "G/35K9qyS0RYMM6Vw9gphXm+1aaDQgKveWY4VtqnWNdsfEQnAZ7aKf7FlzX6ui9B5MSusgLvDLKTw/Dd4gAICQ==",
+  "dgSpecHash": "7PsfabVSn/gSY5nmVUhO0yJBStWNFefcsT9L/yMBspZ+JMmC4QplbEf+PV4EBHX5DbjwkVfB8ymxKQyyV24qLQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dell\\DotNetProjects\\FundooApplication\\FundooApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.16\\microsoft.aspnetcore.authentication.jwtbearer.3.1.16.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
